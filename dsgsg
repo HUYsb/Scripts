@@ -1,0 +1,20 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local function ExecuteEmote()
+  -- Replace "/e wave" with the actual emote string you want to use
+  print("/e wave") -- Simulates emote execution (for demonstration purposes)
+end
+
+local function ButtonClick(button)
+  if button.Name == "EmoteButton" then
+    ExecuteEmote()
+  end
+end
+
+local gui = script.Parent:GetGuiRoot() -- Assuming your button is within a GUI
+local emoteButton = gui:FindFirstChild("EmoteButton")
+
+if emoteButton then
+  emoteButton.MouseButton1Click:Connect(ButtonClick)
+end
